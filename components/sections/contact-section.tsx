@@ -25,19 +25,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@example.com",
-    href: "mailto:hello@example.com",
+    value: "paudelchetan1112@gmail.com",
+    href: "mailto:paudelchetan1112@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 000-0000",
-    href: "tel:+15550000000",
+    value: "+9779868103671",
+    href: null,
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "3J69+69G Nepalgunj, Nepal",
     href: null,
   },
 ];
@@ -129,7 +129,7 @@ export function ContactSection() {
                   <Label htmlFor="name">Name</Label>
                   <Input
                     id="name"
-                    placeholder="John Doe"
+                    placeholder="your name"
                     {...register("name")}
                     className={errors.name ? "border-destructive" : ""}
                   />
@@ -144,7 +144,7 @@ export function ContactSection() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="example@example.com"
                     {...register("email")}
                     className={errors.email ? "border-destructive" : ""}
                   />
