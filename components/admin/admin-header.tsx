@@ -24,6 +24,7 @@ import {
   LayoutDashboard,
   FolderKanban,
   Plus,
+  Mail,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -31,6 +32,11 @@ const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Projects", href: "/admin/projects", icon: FolderKanban },
   { label: "Add Project", href: "/admin/projects/new", icon: Plus },
+  {
+    label: "Messages",
+    href: "/admin/messages", 
+    icon: Mail,
+  },
 ];
 
 export function AdminHeader() {
