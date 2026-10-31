@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LayoutDashboard, FolderKanban, Plus, Home } from "lucide-react";
+import { LayoutDashboard, FolderKanban, Plus, Home, Mail } from "lucide-react";
 
 const navItems = [
   {
@@ -20,6 +20,11 @@ const navItems = [
     label: "Add Project",
     href: "/admin/projects/new",
     icon: Plus,
+  },
+  {
+    label: "Messages",
+    href: "/admin/messages",
+    icon: Mail,
   },
 ];
 

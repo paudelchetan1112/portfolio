@@ -69,3 +69,20 @@ export interface ContactFormData {
   subject: string;
   message: string;
 }
+export type ContactMessageStatus =
+  | "unread"
+  | "read"
+  | "replied"
+  | "archived";
+
+export interface ContactMessage {
+  _id: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  status: ContactMessageStatus;
+  ipAddress?: string;
+  createdAt: string;
+  updatedAt: string;
+}
