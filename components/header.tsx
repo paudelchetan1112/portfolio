@@ -41,23 +41,7 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-2">
-            <ThemeToggle />
-            {isAuthenticated ? (
-              <Link href="/admin">
-                <Button variant="outline" size="sm">
-                  Dashboard
-                </Button>
-              </Link>
-            ) : (
-              <Link href="/login">
-                <Button variant="outline" size="sm">
-                  Login
-                </Button>
-              </Link>
-            )}
-          </div>
+     
 
           {/* Mobile Menu */}
           <div className="flex md:hidden items-center gap-2">
@@ -83,17 +67,7 @@ export function Header() {
                       </a>
                     ))}
                   </nav>
-                  <div className="px-4">
-                    {isAuthenticated ? (
-                      <Link href="/admin" onClick={() => setIsOpen(false)}>
-                        <Button className="w-full">Dashboard</Button>
-                      </Link>
-                    ) : (
-                      <Link href="/login" onClick={() => setIsOpen(false)}>
-                        <Button className="w-full">Login</Button>
-                      </Link>
-                    )}
-                  </div>
+               
                 </div>
               </SheetContent>
             </Sheet>

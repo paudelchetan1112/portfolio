@@ -153,17 +153,7 @@ export default function LoginPage() {
             </form>
 
             {/* Footer */}
-            <div className="mt-6 text-center">
-              <p className="text-sm text-muted-foreground">
-                Don&apos;t have an account?{" "}
-                <Link
-                  href="/signup"
-                  className="text-foreground hover:underline font-medium"
-                >
-                  Sign up
-                </Link>
-              </p>
-            </div>
+       
           </div>
 
           {/* Back to home */}
