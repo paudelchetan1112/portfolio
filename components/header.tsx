@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/context/auth-context";
-import { ThemeToggle } from "./theme-toggle";
+import  {ThemeToggle} from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
@@ -27,21 +27,28 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-xl font-bold tracking-tight">Chetan_Paudel</span>
           </Link>
+    {/* Desktop Navigation */}
+<nav
+  className="hidden items-center md:flex"
+  aria-label="Main navigation"
+>
+  <div className="flex items-center gap-1">
+    {navLinks.map((link) => (
+      <a
+        key={link.href}
+        href={link.href}
+        className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        {link.label}
+      </a>
+    ))}
+  </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-     
+  {/* Separate theme control */}
+  <div className="ml-5 flex items-center border-l pl-5">
+    <ThemeToggle />
+  </div>
+</nav>
 
           {/* Mobile Menu */}
           <div className="flex md:hidden items-center gap-2">
