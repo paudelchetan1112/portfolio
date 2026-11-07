@@ -86,10 +86,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  verification: {
-    // Paste the code from Google Search Console (HTML tag method)
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  },
+  
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
