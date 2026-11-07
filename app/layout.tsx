@@ -16,34 +16,83 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+// ⚠️ Change these three to your real values
+const SITE_URL = "https://www.chetanpaudel.com.np";
+const GITHUB_URL = "https://github.com/paudelchetan1112";
+const FACEBOOK_URL = "https://www.facebook.com/chetan.paudel.2025";
+
+const NAME = "Chetan Paudel";
+
 export const metadata: Metadata = {
-  title: "Portfolio | Full Stack Developer",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${NAME} (Chetan) | Full Stack Developer`,
+    template: `%s | ${NAME}`,
+  },
   description:
-    "Full Stack Developer portfolio showcasing web, mobile, and AI projects. Building modern digital experiences with cutting-edge technologies.",
+    "Chetan Paudel (chetanpaudel) is a Full Stack Developer building web, mobile, and AI projects with React, Next.js and modern technologies. Explore his portfolio, GitHub and projects.",
+  applicationName: `${NAME} Portfolio`,
   keywords: [
-    "developer",
-    "portfolio",
-    "full stack",
-    "web development",
+    "chetan",
+    "chetan paudel",
+    "chetanpaudel",
+    "Chetan Paudel developer",
+    "Chetan Paudel portfolio",
+    "Chetan Paudel GitHub",
+    "Chetan Paudel Facebook",
+    "full stack developer",
+    "web developer Nepal",
     "react",
     "next.js",
   ],
-  authors: [{ name: "Developer" }],
-  creator: "Developer",
+  authors: [{ name: NAME, url: SITE_URL }],
+  creator: NAME,
+  publisher: NAME,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Portfolio | Full Stack Developer",
-    description: "Full Stack Developer portfolio showcasing modern projects.",
-    siteName: "Developer Portfolio",
+    url: SITE_URL,
+    title: `${NAME} (Chetan) | Full Stack Developer`,
+    description:
+      "Portfolio of Chetan Paudel, a Full Stack Developer building modern web, mobile and AI projects.",
+    siteName: `${NAME} Portfolio`,
+    images: [
+      {
+        url: "/logo.png", // better: a 1200x630 image e.g. /og-image.png
+        width: 1200,
+        height: 630,
+        alt: `${NAME} - Full Stack Developer`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Full Stack Developer",
-    description: "Full Stack Developer portfolio showcasing modern projects.",
+    title: `${NAME} (Chetan) | Full Stack Developer`,
+    description:
+      "Portfolio of Chetan Paudel, a Full Stack Developer building modern web, mobile and AI projects.",
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  verification: {
+    // Paste the code from Google Search Console (HTML tag method)
+    google: "YOUR_GOOGLE_VERIFICATION_CODE",
   },
   icons: {
-    icon:"/logo.png",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
@@ -54,6 +103,32 @@ export const viewport: Viewport = {
   ],
   width: "device-width",
   initialScale: 1,
+};
+
+// Structured data: tells Google your website, GitHub and Facebook belong to the same person
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: NAME,
+      alternateName: ["Chetan", "chetanpaudel", "Chetan Paudel"],
+      url: SITE_URL,
+      image: `${SITE_URL}/logo.png`,
+      jobTitle: "Full Stack Developer",
+      sameAs: [GITHUB_URL, FACEBOOK_URL],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: `${NAME} Portfolio`,
+      alternateName: ["Chetan", "chetanpaudel"],
+      inLanguage: "en",
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -67,9 +142,14 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
-
-
+      <body
+        className="font-sans antialiased bg-background text-foreground"
+        suppressHydrationWarning
+      >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
