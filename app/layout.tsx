@@ -86,13 +86,7 @@ export const metadata: Metadata = {
     },
   },
   
-icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/logo.png", type: "image/png" },
-    ],
-      apple: "/logo.png",
-  },
+
 };
 
 export const viewport: Viewport = {
