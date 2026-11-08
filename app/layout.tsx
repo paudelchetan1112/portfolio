@@ -88,8 +88,8 @@ export const metadata: Metadata = {
   
 icons: {
     icon: [
-      { url: "/logo.png", sizes: "48x48" },
-      { url: "/profilePhoto.jpg", type: "image/jpeg" },
+      { url: "/profilePhoto.jpg", sizes: "48x48" },
+      { url: "/logo.png", type: "image/png" },
     ],
   },
 };
