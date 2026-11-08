@@ -16,7 +16,6 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-// ⚠️ Change these three to your real values
 const SITE_URL = "https://www.chetanpaudel.com.np";
 const GITHUB_URL = "https://github.com/paudelchetan1112";
 const FACEBOOK_URL = "https://www.facebook.com/chetan.paudel.2025";
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
     siteName: `${NAME} Portfolio`,
     images: [
       {
-        url: "/logo.png", // better: a 1200x630 image e.g. /og-image.png
+        url: "/profilePhoto.jpg", // better: a 1200x630 image e.g. /og-image.png
         width: 1200,
         height: 630,
         alt: `${NAME} - Full Stack Developer`,
@@ -88,8 +87,8 @@ export const metadata: Metadata = {
   },
   
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/profilePitcure.jpg",
+  
   },
 };
 
