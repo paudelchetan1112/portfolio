@@ -91,6 +91,7 @@ icons: {
       { url: "/favicon.ico", sizes: "48x48" },
       { url: "/logo.png", type: "image/png" },
     ],
+      apple: "/logo.png",
   },
 };
 
